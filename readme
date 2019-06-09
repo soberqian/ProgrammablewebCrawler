@@ -1,0 +1,20 @@
+1.爬取地址为：http://www.gb688.cn/bzgk/gb/std_list_type?r=0.8836182312585961&page=1&pageSize=10&p.p1=1&p.p90=circulation_date&p.p91=desc
+
+2.爬取的信息包括：标准号，标准名称、状态、发布日期、实施日期、操作地址
+
+3.数据库信息修改：db.MyDataSource以及db.MYSQLControl
+
+4.数据库建表信息：
+库名为：gb
+
+CREATE TABLE `basicinfo` (
+  `standard_no` varchar(100) NOT NULL,
+  `title` varchar(100) DEFAULT NULL,
+  `status` varchar(100) DEFAULT NULL,
+  `circulation_date` date DEFAULT NULL,
+  `implement_date` date DEFAULT NULL,
+  `url` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`standard_no`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+5.程序主方法为:main.CrawlerMain
